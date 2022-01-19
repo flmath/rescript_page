@@ -1,2 +1,2 @@
 # rescript_page
-Lets try a new react language 2
+Lets try a new react language 3
