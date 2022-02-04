@@ -1,0 +1,17 @@
+rescript = 1
+g_finger := /home/xmatebi/rescript/rescript_react_basic/node_modules/@rescript/react/lib/ocaml/install.stamp
+rule astj
+  command = /home/xmatebi/rescript/rescript_react_basic/node_modules/rescript/linux/bsc.exe  -warn-error +101 -bs-v 9.1.4 -bs-jsx 3  -absname -bs-ast -o $out $i
+o src/Demo.ast : astj ../../src/Demo.res
+rule deps
+  command = /home/xmatebi/rescript/rescript_react_basic/node_modules/rescript/linux/bsb_helper.exe -hash 291063f3db66b62d8d64f2bcbf09e477 $in
+  restat = 1
+o src/Demo.d : deps src/Demo.ast
+rule mij
+  command = /home/xmatebi/rescript/rescript_react_basic/node_modules/rescript/linux/bsc.exe -I src -I /home/xmatebi/rescript/rescript_react_basic/node_modules/@rescript/react/lib/ocaml   -warn-error +101 -bs-package-name basic-rescript-react -bs-package-output es6-global:$in_d:.mjs -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/Demo.cmj src/Demo.cmi ../../src/Demo.mjs : mij src/Demo.ast
+o src/Index.ast : astj ../../src/Index.res
+o src/Index.d : deps src/Index.ast
+o src/Index.cmj src/Index.cmi ../../src/Index.mjs : mij src/Index.ast
