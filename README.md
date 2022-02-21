@@ -1,6 +1,7 @@
 # ReScript Basic
 
-The only official ReScript starter template.
+Made from  ReScript starter template based on:
+https://dusty.phillips.codes/2021/09/30/fast-bare-rescript-react/
 
 ## Installation
 
