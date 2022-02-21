@@ -1,21 +1,17 @@
-# ReScript Project Template
+# ReScript Basic
 
 The only official ReScript starter template.
 
 ## Installation
 
 ```sh
-npm install
+nvm 17
+npm i @rescript/react
+npm vite
+npm run build:watch
+npm run start
+
+firefox http://localhost:3000/
+
 ```
 
-## Build
-
-- Build: `npm run build`
-- Clean: `npm run clean`
-- Build & watch: `npm run start`
-
-## Run
-
-```sh
-node src/Demo.bs.js
-```
